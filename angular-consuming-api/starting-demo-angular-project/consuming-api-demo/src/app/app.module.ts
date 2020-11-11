@@ -3,29 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AjaxService } from './services/ajax.service';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { RouterModule } from '@angular/router';
-import { SecondViewComponent } from './second-view/second-view.component';
-import { FirstViewComponent } from './first-view/first-view.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent, LandingPageComponent, SecondViewComponent, FirstViewComponent
+    AppComponent, LandingPageComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,
     RouterModule.forRoot([
       /* ORDER OF THE PATHS MATTER, the wildcard should be at the bottom */
       {path: 'welcome', component: LandingPageComponent},
-      {path: 'firstview', component: FirstViewComponent},
-      {path: 'secondview', component: SecondViewComponent},
       {path: '', component: LandingPageComponent},
       {path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ])
   ],
-  providers: [AjaxService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
