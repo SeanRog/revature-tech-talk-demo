@@ -1,0 +1,70 @@
+<div class="container">
+  <!-- THE TITLE -->
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <h1>Let's view a Pokemon</h1>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <!-- THE CARD -->
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <div class="card" style="width: 18rem;" *ngIf="pokemonDisplay">
+        <img [src]="pokemonDisplay.sprites.front_default" class="card-img-top"
+          alt="...">
+        <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png" class="card-img-top"
+          alt="..."> -->
+        <div class="card-body">
+          <h5 class="card-title">{{pokemonDisplay.name}}</h5>
+          <p class="card-text">Id: {{pokemonDisplay.id}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <!-- THE BUTTON -->
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <input type='text' [(ngModel)]='inputField'/>
+      <button type="button" class="btn btn-success" (click)="firstButton()">First Button</button>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <!-- SECOND VIEW -->
+  <!-- SECOND VIEW -->
+  <!-- SECOND VIEW -->
+  <!-- SECOND VIEW -->
+  <!-- THE CARD -->
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <div class="card" style="width: 18rem;" *ngIf="jsonDisplay">
+        <img [src]="jsonDisplay.sprites.front_default" class="card-img-top"
+          alt="...">
+        <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png" class="card-img-top"
+          alt="..."> -->
+        <div class="card-body">
+          <h5 class="card-title">{{jsonDisplay.name}}</h5>
+          <p class="card-text">Id: {{jsonDisplay.id}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <!-- THE BUTTON -->
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <input type='text' [(ngModel)]='inputField'/>
+      <button type="button" class="btn btn-success" (click)="secondButton()">Second Button</button>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
